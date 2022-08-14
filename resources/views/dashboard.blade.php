@@ -203,7 +203,8 @@
 
                                     <div class="alert alert-primary alert-dismissible alert-solid alert-label-icon fade show" role="alert">
                                         @if (Auth::user()->account_number==1 && Auth::user()->account_name==1)
-                                            <a href="{{route('vertual')}}"> <i class="ri-user-smile-line label-icon text-white"></i><strong>Click this section to get your permament Virtual Bank Account (Transfer money to the account no to get your Sollyinstantawoof Wallet funded instantly!)</strong></a>
+                                            <a class="text-white" href="{{route('vertual')}}"> <i class="ri-user-smile-line label-icon text-white"></i><strong>Click this section to get your permament Virtual Bank Account (Transfer money to the account no to get your Sollyinstantawoof Wallet funded instantly!)</strong></a>
+
                                         @else
                                             <i class="ri-user-smile-line label-icon"></i><strong>{{Auth::user()->account_name}}</strong>
                                             <i class="ri-user-smile-line label-icon"></i><strong>Account No:{{Auth::user()->account_number}}</strong>
