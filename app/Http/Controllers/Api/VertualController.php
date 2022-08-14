@@ -138,7 +138,7 @@ class VertualController
                     CURLOPT_SSL_VERIFYHOST => 0,
                     CURLOPT_SSL_VERIFYPEER => 0,
                     CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array('refid' =>$refid, 'amount' => $amount),
+                    CURLOPT_POSTFIELDS => array('refid' =>'Sollyinstantawoof'.$refid, 'amount' => $amount),
 
                     CURLOPT_HTTPHEADER => array(
                         'apikey: RENO-62e2e0e9105fe6.46494398'
