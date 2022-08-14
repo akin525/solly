@@ -112,7 +112,7 @@ class VertualController
                 $user = user::where('username', $wallet->username)->first();
 
 
-                $admin= 'info@yellowmantelecoms.com.ng';
+                $admin= 'info@sollyinstantawoof.com.ng';
 
                 $receiver= $user->email;
                 Mail::to($receiver)->send(new Emailcharges($charp ));
