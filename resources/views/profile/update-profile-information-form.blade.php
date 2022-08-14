@@ -65,9 +65,32 @@
             <x-jet-label for="email" value="{{ __('Email') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+
+            <div class="card">
+                <div class="card-body">
+                    <div class='alert alert-primary'>
+                        <i class='ri-bell-line label-icon'></i><h5 class="text-center">Transfer money to your Virtual Bank Account to get your Sollyinstantawoof Wallet credited instantly! </br></h5>
+
+                        <center>
+
+                            <div class="alert alert-primary alert-dismissible alert-solid alert-label-icon fade show" role="alert">
+                                @if (Auth::user()->account_number==1 && Auth::user()->account_name==1)
+                                    <i class="ri-user-smile-line label-icon"></i><strong>Click this section to get your permament Virtual Bank Account (Transfer money to the account no to get your Sollyinstantawoof Wallet funded instantly!)</strong>
+                                @else
+                                    <i class="ri-user-smile-line label-icon"></i><strong>{{Auth::user()->account_name}}</strong>
+                                    <i class="ri-user-smile-line label-icon"></i><strong>Account No:{{Auth::user()->account_number}}</strong>
+                                    <i class="ri-user-smile-line label-icon"></i><strong>WEMA-BANK</strong>
+                                @endif
+
+                                {{--                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </x-slot>
-
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
             {{ __('Saved.') }}

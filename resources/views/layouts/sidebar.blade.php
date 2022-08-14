@@ -6,29 +6,29 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Velzon - Admin & Dashboard Template</title>
+    <title>{{Auth::user()->name}} Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
     <!-- jsvectormap css -->
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/js/layout.js"></script>
+    <script src="{{asset('assets/js/layout.js')}}"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -216,41 +216,25 @@
                         <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                            <img class="rounded-circle header-profile-user" src="{{asset('fd.jpg')}}"
                                  alt="Header Avatar">
                             <span class="text-start ms-xl-2">
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
-                                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{Auth::user()->name}}</span>
+{{--                                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>--}}
                             </span>
                         </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
                             <!-- item-->
-                            <h6 class="dropdown-header">Welcome Anna!</h6>
-                            <a class="dropdown-item" href="pages-profile.html"><i
+                            <h6 class="dropdown-header">Welcome {{Auth::user()->username}}</h6>
+                            <a class="dropdown-item" href="{{ route('profile.show') }}"><i
                                     class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                     class="align-middle">Profile</span></a>
-                            <a class="dropdown-item" href="apps-chat.html"><i
-                                    class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Messages</span></a>
-                            <a class="dropdown-item" href="apps-tasks-kanban.html"><i
-                                    class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Taskboard</span></a>
-                            <a class="dropdown-item" href="pages-faqs.html"><i
-                                    class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Help</span></a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="pages-profile.html"><i
+                            <a class="dropdown-item" href="#"><i
                                     class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Balance : <b>$5971.67</b></span></a>
-                            <a class="dropdown-item" href="pages-profile-settings.html"><span
-                                    class="badge bg-soft-success text-success mt-1 float-end">New</span><i
-                                    class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Settings</span></a>
-                            <a class="dropdown-item" href="auth-lockscreen-basic.html"><i
-                                    class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Lock screen</span></a>
-                            <a class="dropdown-item" href="auth-logout-basic.html"><i
+                                    class="align-middle">Balance : <b>₦{{number_format(intval(Auth::user()->wallet *1), 2)}}</b></span></a>
+                            <a class="dropdown-item" href="{{route('logout')}}"><i
                                     class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
                                     class="align-middle" data-key="t-logout">Logout</span></a>
                         </div>
@@ -306,6 +290,11 @@
                         </a>
                     </li> <!-- end Dashboard Menu -->
                     <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('profile.show')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-account-box-fill"></i> <span data-key="t-dashboards">My Account</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
                         <a class="nav-link menu-link" href="{{route('fund')}}"   aria-controls="sidebarDashboards">
                             <i class="ri-wallet-2-fill"></i> <span data-key="t-dashboards">All Deposit</span>
                         </a>
@@ -328,6 +317,11 @@
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="{{url('elect')}}"   aria-controls="sidebarDashboards">
                             <i class="ri-lightbulb-fill"></i> <span data-key="t-data">Pay Electricity</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{url('invoice')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-book-mark-fill"></i> <span data-key="t-data">All Purchase</span>
                         </a>
                     </li> <!-- end Dashboard Menu -->
 
@@ -353,28 +347,28 @@
 
 
 <!-- JAVASCRIPT -->
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
-<script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-<script src="assets/js/plugins.js"></script>
+<script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
+<script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+<script src="{{asset('assets/libs/feather-icons/feather.min.js')}}"></script>
+<script src="{{asset('assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+<script src="{{asset('assets/js/plugins.js')}}"></script>
 
 <!-- apexcharts -->
-<script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
 <!-- Vector map-->
-<script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-<script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+<script src="{{asset('assets/libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
+<script src="{{asset('assets/libs/jsvectormap/maps/world-merc.js')}}"></script>
 
 <!--Swiper slider js-->
-<script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+<script src="{{asset('assets/libs/swiper/swiper-bundle.min.js')}}"></script>
 
 <!-- Dashboard init -->
-<script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
+<script src="{{asset('assets/js/pages/dashboard-ecommerce.init.js')}}"></script>
 
 <!-- App js -->
-<script src="assets/js/app.js"></script>
+<script src="{{asset('assets/js/app.js')}}"></script>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 

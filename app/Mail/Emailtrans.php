@@ -30,6 +30,6 @@ class Emailtrans extends Mailable
     public function build()
     {
         $bo= $this->bo;
-        return $this->markdown('email.tran',['bo' => $bo])->subject(   $bo['username'].' |Email-Transaction|'.'Yellowman-'. $bo['transactionid']);
+        return $this->markdown('email.tran',['bo' => $bo])->subject(   $bo['username'].' |Email-Transaction|'.'sollyinstantawoof-'. $bo['transactionid']);
     }
 }

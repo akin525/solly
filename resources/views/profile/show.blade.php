@@ -1,4 +1,24 @@
 @include('layouts.sidebar')
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Profile</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboards</a></li>
+                            <li class="breadcrumb-item active">My Profile</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -34,34 +54,6 @@
                 @livewire('profile.logout-other-browser-sessions-form')
             </div>
 
-            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-                <x-jet-section-border />
-
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.delete-user-form')
-                </div>
-            @endif
         </div>
     </div>
 </x-app-layout>
-<script type="text/javascript">
-    (function() {
-        var options = {
-            whatsapp: "+2348103153004", // WhatsApp number
-            call_to_action: "Message us", // Call to action
-            position: "left", // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol,
-            host = "whatshelp.io",
-            url = proto + "//static." + host;
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function() {
-            WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-    })();
-</script>

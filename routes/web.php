@@ -92,7 +92,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/logout', function(){
     Auth::logout();
-    return Redirect::to('login');
+    return view('logout');
 });
 
 Route::get('admin', function () {

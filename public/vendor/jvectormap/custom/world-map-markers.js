@@ -8,7 +8,7 @@ $(function(){
 		zoomOnScroll: false,
 		markerStyle: {
 			initial: {
-				fill: '#333333',
+				fill: '#405189',
 				stroke: '#FFFFFF',
 				r: 6
 			}

@@ -30,7 +30,7 @@ $(function(){
 		container: $('#regionSelection'),
 		map: 'de_merc',
 		zoomOnScroll: false,
-		zoomMin: 1,		
+		zoomMin: 1,
 		regionsSelectable: true,
 		markersSelectable: true,
 		markers: markers,
@@ -47,7 +47,7 @@ $(function(){
 				fill: '#17995e'
 			},
 			selected: {
-				fill: '#333333'
+				fill: '#405189'
 			}
 		},
 		series: {

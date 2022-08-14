@@ -83,7 +83,7 @@ class AirtimeController
                     CURLOPT_POSTFIELDS => array( 'name' => $request->name, 'number' => $request->number, 'amount' => $request->amount, 'refid' => $request->refid),
 
                     CURLOPT_HTTPHEADER => array(
-                        'apikey: RENO-62ddc85d549f76.59606188'
+                        'apikey: RENO-62e2e0e9105fe6.46494398'
                     )));
 
                 $response = curl_exec($curl);

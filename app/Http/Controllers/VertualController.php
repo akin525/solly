@@ -39,7 +39,7 @@ class VertualController
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_SSL_VERIFYPEER => 0,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('account_name' => $name, 'business_short_name' => 'YELLOWMANTELECOMS', 'uniqueid' => $username, 'email' => $email, 'phone' => $phone, 'webhook_url' => 'https://yellowmantelecoms.com.ng/api/run',),
+                CURLOPT_POSTFIELDS => array('account_name' => $name, 'business_short_name' => 'sollyinstantawoof', 'uniqueid' => $username, 'email' => $email, 'phone' => $phone, 'webhook_url' => 'http://sollyinstantawoof.com.ng/api/run',),
                 CURLOPT_HTTPHEADER => array(
                     'Authorization: mcd_key_75rq4][oyfu545eyuriup1q2yue4poxe3jfd'
                 ),

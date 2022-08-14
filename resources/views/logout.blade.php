@@ -1,4 +1,6 @@
 <x-guest-layout>
+
+    <!-- auth-page wrapper -->
     <div class="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
         <div class="bg-overlay"></div>
         <!-- auth-page content -->
@@ -7,15 +9,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card overflow-hidden">
-                            <div class="row g-0">
+                            <div class="row justify-content-center g-0">
                                 <div class="col-lg-6">
                                     <div class="p-lg-5 p-4 auth-one-bg h-100">
                                         <div class="bg-overlay"></div>
                                         <div class="position-relative h-100 d-flex flex-column">
                                             <div class="mb-4">
-                                                <a href="#" class="d-block">
+                                                <a href="{{route('login')}}" class="d-block">
                                                     <h2 class="text-capitalize text-white"><b>Sollyinstantawoof</b></h2>
-                                                                                                        <img src="{{asset('sam.png')}}" alt="" height="200">
                                                 </a>
                                             </div>
                                             <div class="mt-auto">
@@ -49,60 +50,15 @@
                                 <!-- end col -->
 
                                 <div class="col-lg-6">
-                                    <div class="p-lg-5 p-4">
-                                        <div>
-                                            <h5 class="text-primary">Welcome Back !</h5>
-                                            <p class="text-muted">Sign in to continue to Sollyinstantawoof.</p>
-                                        </div>
+                                    <div class="p-lg-5 p-4 text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/hzomhqxz.json" trigger="loop" colors="primary:#405189,secondary:#08a88a" style="width:180px;height:180px"></lord-icon>
 
-                                        <div class="mt-4">
-
-
-        <form  method="POST" action="{{ route('login') }}">
-            @csrf
-            @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
-            @endif
-                    <x-jet-validation-errors class="alert-danger card-body" />
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" id="username" placeholder="Enter Your Email" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="float-end">
-                            <a href="#" class="text-muted">Forgot password?</a>
-                        </div>
-                        <label class="form-label" for="password-input">Password</label>
-                        <div class="position-relative auth-pass-inputgroup mb-3">
-                            <input type="password" name="password" class="form-control pe-5" placeholder="Enter password" id="password-input" required>
-                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                        <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                    </div>
-
-                    <div class="mt-4">
-                        <button class="btn btn-success w-100" type="submit">Sign In</button>
-                    </div>
-
-                    <div class="mt-4 text-center">
-                        <div class="signin-other-title">
-                            <h5 class="fs-13 mb-4 title">Sign In with</h5>
-                        </div>
-
-                    </div>
-
-        </form>
-                                        </div>
-
-                                        <div class="mt-5 text-center">
-                                            <p class="mb-0">Don't have an account ? <a href="{{route('register')}}" class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
+                                        <div class="mt-4 pt-2">
+                                            <h5>You are Logged Out</h5>
+                                            <p class="text-muted">Thank you for using <span class="fw-semibold">sollyinstantawoof</span></p>
+                                            <div class="mt-4">
+                                                <a href="{{route('login')}}" class="btn btn-success w-100">Sign In</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +84,7 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> sollyinstantawoof<i class="mdi mdi-heart text-danger"></i>
                             </p>
                         </div>
                     </div>
@@ -137,16 +93,5 @@
         </footer>
         <!-- end Footer -->
     </div>
-    <!-- JAVASCRIPT -->
-    <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
-    <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
-    <script src="{{asset('assets/libs/feather-icons/feather.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
-    <script src="{{asset('assets/js/plugins.js')}}"></script>
-
-    <!-- validation init -->
-    <script src="{{asset('assets/js/pages/form-validation.init.js"')}}></script>
-    <!-- password create init -->
-    <script src="{{asset('assets/js/pages/passowrd-create.init.js')}}"></script>
+    <!-- end auth-page-wrapper -->
 </x-guest-layout>

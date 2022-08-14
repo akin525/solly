@@ -11,7 +11,7 @@ $(function(){
 				fill: '#ffffff'
 			},
 			hover: {
-				fill: '#333333'
+				fill: '#405189'
 			}
 		},
 		regionStyle:{
