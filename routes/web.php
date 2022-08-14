@@ -35,16 +35,16 @@ use App\Http\Controllers\BillController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    if (Auth()->user()) {
-        return redirect(route('dashboard'))
-            ->withSuccess('Signed in');
-
-    }else {
-        return view('auth.login');
-    }
-});
+//
+//Route::get('/', function () {
+//    if (Auth()->user()) {
+//        return redirect(route('dashboard'))
+//            ->withSuccess('Signed in');
+//
+//    }else {
+//        return view('auth.login');
+//    }
+//});
 Route::post('log', [AuthController::class, 'customLogin'])->name('log');
 
 //Route::get('select', function () {
@@ -100,7 +100,7 @@ Route::get('admin', function () {
     return view('admin.login');
 
 });
-//Route::get('/', [AuthController::class, 'landing'])->name('home');
+Route::get('/', [AuthController::class, 'landing'])->name('home');
 
 Route::post('cuslog', [LoginController::class, 'login'])->name('cuslog');
 

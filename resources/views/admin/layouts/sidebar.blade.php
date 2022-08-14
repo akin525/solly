@@ -1,313 +1,444 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none">
 
-<!-- Mirrored from bootstrap.gallery/unipro/v1-x/03-design-green/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Apr 2022 11:23:54 GMT -->
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 07:51:18 GMT -->
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Meta -->
-    <meta name="description" content="Yellowmantelecoms | Buy data in a few clicks to keep surfing the internet. You can buy whatever size of data plan for whichever network you desire. All plans are topped-up to your specified number in seconds.">
-    <meta name="author" content="ParkerThemes">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://yellowmantelecoms.com.ng/images/yel.png">
-    <link href="{{asset('assets/libs/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/extra-libs/calendar/calendar.css')}}" rel="stylesheet" />
-    <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
+    <meta charset="utf-8" />
+    <title>{{Auth::user()->name}} Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
-    <title>{{Auth::user()->name}}</title>
+    <!-- jsvectormap css -->
+    <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
 
+    <!--Swiper slider css-->
+    <link href="{{asset('assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <!-- *************
-        ************ Common Css Files *************
-    ************ -->
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <!-- Layout config Js -->
+    <script src="{{asset('assets/js/layout.js')}}"></script>
+    <!-- Bootstrap Css -->
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="{{asset('assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <!-- Icomoon Font Icons css -->
-    <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
-    <link rel="stylesheet" href="{{asset('Buy Data _ MobileNig_files/w3(1).css')}}">
-
-    <link rel="stylesheet" href="{{asset('Buy Data _ MobileNig_files/w3(2).css')}}">
-    <link rel="stylesheet" href="{{asset('Buy Data _ MobileNig_files/font-awesome.min.css')}}">
-    <link href="{{asset('Buy Data _ MobileNig_files/icon')}}" rel="stylesheet">
-    <!-- *************
-        ************ Vendor Css Files *************
-    ************ -->
-
+</head>
 
 <body>
+<style>
+    .preloader
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 9999;
+        text-align: center;
+    }
+    .preloader-icon
+    {
+        position: relative;
+        top: 45%;
+        width: 100px;
+        border-radius: 50%;
+        animation: shake 1.5s infinite;
+    }
+    @keyframes shake
+    {
+        0% { transform: translate(1px, -1px) rotate(0deg);}
+        10% { transform: translate(1px, -3px) rotate(-1deg);}
+        20% { transform: translate(1px, -5px) rotate(-3deg);}
+        30% { transform: translate(1px, -7px) rotate(0deg);}
+        40% { transform: translate(1px, -9px) rotate(1deg);}
+        50% { transform: translate(1px, -11px) rotate(3deg);}
+        60% { transform: translate(1px, -9px) rotate(0deg);}
+        70% { transform: translate(1px, -7px) rotate(-1deg);}
+        80% { transform: translate(1px, -5px) rotate(-3deg);}
+        90% { transform: translate(1px, -3px) rotate(0deg);}
+        100% { transform: translate(1px, -1px) rotate(-1deg);}
+    }
+</style>
+<div class="preloader"> <img class="preloader-icon" src="{{asset('gp.gif')}}" alt="My Site Preloader"> </div>
+@include('sweetalert::alert')
+<!-- Begin page -->
+<div id="layout-wrapper">
 
-<!-- ============================================================== -->
-<!-- Preloader - style you can find in spinners.css -->
-<!-- ============================================================== -->
-<div class="preloader">
-    <div class="lds-ripple">
-        <div class="lds-pos"></div>
-        <div class="lds-pos"></div>
-    </div>
-</div>
-<!-- ============================================================== -->
-<!-- Main wrapper - style you can find in pages.scss -->
-<!-- ============================================================== -->
-<div id="main-wrapper">
-    <!-- ============================================================== -->
-    <!-- Topbar header - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <header class="topbar" data-navbarbg="skin5">
-        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-            <div class="navbar-header" data-logobg="skin5">
-                <!-- This is for the sidebar toggle which is visible on mobile only -->
-                <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <a class="navbar-brand" href="#">
-                    <!-- Logo icon -->
-                    <b class="logo-icon p-l-10">
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <img width="150" src="{{asset('images/yel.png')}}" alt="homepage" class="light-logo" />
-
-                    </b>
-                    <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span class="logo-text">
-                             <!-- dark Logo text -->
-{{--                        <h6 class="light-logo">YELLOWMANTELECOMS</h6>--}}
-
+    <header id="page-topbar">
+        <div class="layout-width">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box horizontal-logo">
+                        <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
                         </span>
-                    <!-- Logo icon -->
-                    <!-- <b class="logo-icon"> -->
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
-                    <!-- </b> -->
-                    <!--End Logo icon -->
-                </a>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Toggle which is visible on mobile only -->
-                <!-- ============================================================== -->
-                <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
-                <ul class="navbar-nav float-left mr-auto">
-                    <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
-                    <!-- ============================================================== -->
-                    <!-- create new -->
-                    <!-- ============================================================== -->
-
-                    <!-- ============================================================== -->
-                    <!-- Search -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                        <form class="app-search position-absolute">
-                            <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                        </form>
-                    </li>
-                </ul>
-                <!-- ============================================================== -->
-                <!-- Right side toggle and nav items -->
-                <!-- ============================================================== -->
-                <ul class="navbar-nav float-right">
-                    <!-- ============================================================== -->
-                    <!-- Comment -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                            <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                        </span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <!-- ============================================================== -->
-                    <!-- End Comment -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Messages -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="font-24 mdi mdi-comment-processing"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
-                            <ul class="list-style-none">
-                                <li>
-                                    <div class="">
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Event today</h5>
-                                                    <span class="mail-desc">Just a reminder that event</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Settings</h5>
-                                                    <span class="mail-desc">You can customize this template</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Pavan kumar</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Luanch Admin</h5>
-                                                    <span class="mail-desc">Just see the my new admin!</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- ============================================================== -->
-                    <!-- End Messages -->
-                    <!-- ============================================================== -->
 
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
-                        <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                            <a class="dropdown-item" href="{{ route('profile.show') }}"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('profile.show') }}"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                            <div class="dropdown-divider"></div>
-                            {{--                            <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>--}}
+                        <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                            <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="17">
+                        </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                    <span class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    </button>
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-md-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search..." autocomplete="off"
+                                   id="search-options" value="">
+                            <span class="mdi mdi-magnify search-widget-icon"></span>
+                            <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
+                                  id="search-close-options"></span>
                         </div>
-                    </li>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                </ul>
+                        <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                            <div data-simplebar style="max-height: 320px;">
+                                <!-- item-->
+                                <div class="dropdown-header">
+                                    <h6 class="text-overflow text-muted mb-0 text-uppercase">Recent Searches</h6>
+                                </div>
+
+                                <div class="dropdown-item bg-transparent text-wrap">
+                                    <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">how to setup <i
+                                            class="mdi mdi-magnify ms-1"></i></a>
+                                    <a href="index.html" class="btn btn-soft-secondary btn-sm btn-rounded">buttons <i
+                                            class="mdi mdi-magnify ms-1"></i></a>
+                                </div>
+                                <!-- item-->
+                                <div class="dropdown-header mt-2">
+                                    <h6 class="text-overflow text-muted mb-1 text-uppercase">Pages</h6>
+                                </div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
+                                    <span>Analytics Dashboard</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
+                                    <span>Help Center</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
+                                    <span>My account settings</span>
+                                </a>
+
+                                <!-- item-->
+                                <div class="dropdown-header mt-2">
+                                    <h6 class="text-overflow text-muted mb-2 text-uppercase">Members</h6>
+                                </div>
+
+                                <div class="notification-list">
+                                    <!-- item -->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                        <div class="d-flex">
+                                            <img src="assets/images/users/avatar-2.jpg"
+                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <div class="flex-1">
+                                                <h6 class="m-0">Angela Bernier</h6>
+                                                <span class="fs-11 mb-0 text-muted">Manager</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- item -->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                        <div class="d-flex">
+                                            <img src="assets/images/users/avatar-3.jpg"
+                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <div class="flex-1">
+                                                <h6 class="m-0">David Grasso</h6>
+                                                <span class="fs-11 mb-0 text-muted">Web Designer</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- item -->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                        <div class="d-flex">
+                                            <img src="assets/images/users/avatar-5.jpg"
+                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <div class="flex-1">
+                                                <h6 class="m-0">Mike Bunch</h6>
+                                                <span class="fs-11 mb-0 text-muted">React Developer</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-3 pb-1">
+                                <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results <i
+                                        class="ri-arrow-right-line ms-1"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-flex align-items-center">
+
+
+                    <div class="ms-1 header-item d-none d-sm-flex">
+                        <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                            <i class='bx bx-moon fs-22'></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown ms-sm-3 header-item topbar-user">
+                        <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex align-items-center">
+                            <img class="rounded-circle header-profile-user" src="{{asset('fd.jpg')}}"
+                                 alt="Header Avatar">
+                            <span class="text-start ms-xl-2">
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{Auth::user()->name}}</span>
+{{--                                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Founder</span>--}}
+                            </span>
+                        </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <h6 class="dropdown-header">Welcome {{Auth::user()->username}}</h6>
+                            <a class="dropdown-item" href="{{ route('profile.show') }}"><i
+                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Profile</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i
+                                    class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle">Balance : <b>₦{{number_format(intval(Auth::user()->wallet *1), 2)}}</b></span></a>
+                            <a class="dropdown-item" href="{{route('logout')}}"><i
+                                    class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle" data-key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-    <!-- ============================================================== -->
-    <!-- End Topbar header -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Left Sidebar - style you can find in sidebar.scss  -->
-    <!-- ============================================================== -->
-    <aside class="left-sidebar" data-sidebarbg="skin5">
-        <!-- Sidebar scroll-->
-        <div class="scroll-sidebar">
-            <!-- Sidebar navigation-->
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav" class="p-t-30">
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard')}}" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Back to User</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/dashboard')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/user')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">ALl Users</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/deposits')}}" aria-expanded="false"><i class="mdi mdi-wallet"></i><span class="hide-menu">All Deposits</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin/air') }}" aria-expanded="false"><i class="mdi mdi-laptop"></i><span class="hide-menu">Airtime Control</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin/server') }}" aria-expanded="false"><i class="mdi mdi-laptop"></i><span class="hide-menu">Data Control</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/renotransaction')}}" aria-expanded="false"><i class="mdi mdi-book"></i><span class="hide-menu">Reno Transaction</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/product')}}" aria-expanded="false"><i class="mdi mdi-cart"></i><span class="hide-menu">Reno Product</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/setcharge')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Set Charges</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/noti')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Set Notification</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin/bills')}}" aria-expanded="false"><i class="mdi mdi-network"></i><span class="hide-menu">All Bills</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('admin/credit')}}" aria-expanded="false"><i class="mdi mdi-wallet"></i><span class="hide-menu">Credit User</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link  waves-effect waves-dark" href="{{route('admin/charge')}}" aria-expanded="false"><i class="mdi mdi-wallet"></i><span class="hide-menu">Charge User</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link  waves-effect waves-dark" href="{{route('admin/finds')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Find User</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link  waves-effect waves-dark" href="{{route('admin/finddeposite')}}" aria-expanded="false"><i class="mdi mdi-search-web"></i><span class="hide-menu">Find Deposit</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link  waves-effect waves-dark" href="{{route('invoice')}}" aria-expanded="false"><i class="mdi mdi-bookmark"></i><span class="hide-menu">Transaction </span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link  waves-effect waves-dark" href="{{route('charges')}}" aria-expanded="false"><i class="mdi mdi-account-box"></i><span class="hide-menu">Charges</span></a></li>
-                </ul>
-            </nav>
-            <!-- End Sidebar navigation -->
         </div>
-        <!-- End Sidebar scroll-->
-    </aside>
-    <!-- ============================================================== -->
-    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Page wrapper  -->
-    <!-- ============================================================== -->
-    <div class="page-wrapper">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="page-breadcrumb">
+    </header>
+    <!-- ========== App Menu ========== -->
+    <div class="app-menu navbar-menu">
+        <!-- LOGO -->
+        <div class="navbar-brand-box">
+            <!-- Dark Logo-->
+            <a href="{{route('dashboard')}}" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <h4 class="text-capitalize text-white"><b>Sollyinstantawoof</b></h4>
+{{--                        <img src="{{asset('sam.png')}}" alt="" width="150" >--}}
+                    </span>
+                <span class="logo-lg">
+                    <h4 class="text-capitalize text-white"><b>Sollyinstantawoof</b></h4>
+
+{{--                        <img src="{{asset('sam.png')}}" alt="" width="150" >--}}
+                    </span>
+            </a>
+            <!-- Light Logo-->
+            <a href="{{route('dashboard')}}" class="logo logo-light">
+                    <span class="logo-sm">
+                        <h4 class="text-capitalize text-white"><b>Sollyinstantawoof</b></h4>
+
+{{--                        <img src="{{asset('sam.png')}}" alt="" width="150">--}}
+                    </span>
+                <span class="logo-lg">
+{{--                        <img src="{{asset('sam.png')}}" alt="" width="150">--}}
+                    <h4 class="text-capitalize text-white"><b>Sollyinstantawoof</b></h4>
+
+                    </span>
+            </a>
+            <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                <i class="ri-record-circle-line"></i>
+            </button>
+        </div>
+
+        <div id="scrollbar">
+            <div class="container-fluid">
+
+                <div id="two-column-menu">
+                </div>
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('dashboard')}}"   aria-controls="sidebarDashboards">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Switch To User</span>
+                            </a>
+                        </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/dashboard')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/user')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-account-box-fill"></i> <span data-key="t-dashboards">All Users</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/deposits')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-money-cny-box-fill"></i> <span data-key="t-dashboards">All Deposits</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/air')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-phone-fill"></i> <span data-key="t-airtime">Airtime Controller</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/server')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-bar-chart-box-fill"></i> <span data-key="t-data">Data Controller</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/renotransaction')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-tv-2-fill"></i> <span data-key="t-data">Reno Transaction</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/product')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-shopping-cart-fill"></i> <span data-key="t-data">Reno Product</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/setcharge')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-settings-2-fill"></i> <span data-key="t-data">Set Charges</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/noti')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-settings-2-fill"></i> <span data-key="t-data">Set Notification</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/bills')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-phone-fill"></i> <span data-key="t-data">All Bills</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/credit')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-money-cny-box-fill"></i> <span data-key="t-data">Credit User</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/charge')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-money-cny-box-fill"></i> <span data-key="t-data">Charge User</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/finds')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-account-box-fill"></i> <span data-key="t-data">Find User</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('admin/finddeposite')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-search-2-fill"></i> <span data-key="t-data">Find Deposit</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+
+
+                </ul>
+            </div>
+            <!-- Sidebar -->
+        </div>
+
+        <div class="sidebar-background"></div>
+    </div>
+    <!-- Left Sidebar End -->
+    <!-- Vertical Overlay-->
+    <div class="vertical-overlay"></div>
+    <div class="main-content">
 
 
 
 
 
-        @include('sweetalert::alert')
-
-        {{--            @livewire('navigation-menu')--}}
+        <!-- END layout-wrapper -->
 
 
 
+        <!-- JAVASCRIPT -->
+        <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{asset('assets/libs/feather-icons/feather.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+        <script src="{{asset('assets/js/plugins.js')}}"></script>
+
+        <!-- apexcharts -->
+        <script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+
+        <!-- Vector map-->
+        <script src="{{asset('assets/libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
+        <script src="{{asset('assets/libs/jsvectormap/maps/world-merc.js')}}"></script>
+
+        <!--Swiper slider js-->
+        <script src="{{asset('assets/libs/swiper/swiper-bundle.min.js')}}"></script>
+
+        <!-- Dashboard init -->
+        <script src="{{asset('assets/js/pages/dashboard-ecommerce.init.js')}}"></script>
+
+        <!-- App js -->
+        <script src="{{asset('assets/js/app.js')}}"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
 
 
 
+        <style>
+            .float{
+                position:fixed;
+                width:60px;
+                height:60px;
+                bottom:40px;
+                right:40px;
+                background-color:#25d366;
+                color:#FFF;
+                border-radius:50px;
+                text-align:center;
+                font-size:30px;
+                box-shadow: 2px 2px 3px #999;
+                z-index:100;
+            }
 
-        <!-- ============================================================== -->
-            <!-- End Wrapper -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- All Jquery -->
-            <!-- ============================================================== -->
-            <script src="{{asset('assets/libs/jquery/dist/jquery.min.js')}}"></script>
-            <script src="{{asset('dist/js/jquery.ui.touch-punch-improved.js')}}"></script>
-            <script src="{{asset('dist/js/jquery-ui.min.js')}}"></script>
-            <!-- Bootstrap tether Core JavaScript -->
-            <script src="{{asset('assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-            <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-            <!-- slimscrollbar scrollbar JavaScript -->
-            <script src="{{asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-            <script src="{{asset('assets/extra-libs/sparkline/sparkline.js')}}"></script>
-            <!--Wave Effects -->
-            <script src="{{asset('dist/js/waves.js')}}"></script>
-            <!--Menu sidebar -->
-            <script src="{{asset('dist/js/sidebarmenu.js')}}"></script>
-            <!--Custom JavaScript -->
-            <script src="{{asset('dist/js/custom.min.js')}}"></script>
-
+            .my-float{
+                margin-top:16px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="http:wa.me/2348034547657/?text=Goodday, My Username is....." class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+        <script>
+            window.onload = function(){ document.querySelector(".preloader").style.display = "none"; }
+        </script>
 </body>
 
-<!-- Mirrored from bootstrap.gallery/unipro/v1-x/03-design-green/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Apr 2022 11:24:24 GMT -->
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Aug 2022 07:53:05 GMT -->
 </html>

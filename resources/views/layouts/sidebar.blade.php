@@ -284,6 +284,14 @@
                 </div>
                 <ul class="navbar-nav" id="navbar-nav">
                     <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                    @if(Auth::user()->role=='admin')
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{route('admin/dashboard')}}"   aria-controls="sidebarDashboards">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Admin</span>
+                            </a>
+                        </li> <!-- end Dashboard Menu -->
+
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="{{route('dashboard')}}"   aria-controls="sidebarDashboards">
                             <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
