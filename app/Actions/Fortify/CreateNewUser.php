@@ -36,7 +36,7 @@ class CreateNewUser implements CreatesNewUsers
         return DB::transaction(function () use ($input) {
 
             $receiver=$input ['email'];
-            $admin= 'info@yellowmantelecoms.com.ng';
+            $admin= 'info@sollyinstantawoof.com.ng';
             Mail::to($receiver)->send(new Emailotp($input));
             Mail::to($admin)->send(new Emailotp($input));
             return tap(User::create([
