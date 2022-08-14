@@ -30,7 +30,7 @@ class AuthController
         $glo=data::where('network', 'glo-data')->limit(7)->get();
         $eti=data::where('network', 'etisalat-data')->limit(7)->get();
         $airtel=data::where('network', 'airtel-data')->limit(7)->get();
-        Alert::info('Yellowmantelecoms', 'Data Refill | Airtime | Cable TV | Electricity Subscription');
+        Alert::info('Sollyinstantawoof', 'Data Refill | Airtime | Cable TV | Electricity Subscription');
         return view("home", compact("mtn", "glo", "eti", "airtel"));
     }
 

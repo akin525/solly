@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>sollyinstantawoof </title>
-    <meta content="" name="description">
+    <meta content="We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('lan/assets/img/dom.png')}}" rel="icon">
-    <link href="{{asset('lan/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="https://sollyinstantawoof.com.ng/fd.jpg" rel="icon">
+    <link href="https://sollyinstantawoof.com.ng/fd.jpg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -36,6 +36,44 @@
 </head>
 
 <body>
+<style>
+    .preloader
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        z-index: 9999;
+        text-align: center;
+    }
+    .preloader-icon
+    {
+        position: relative;
+        top: 45%;
+        width: 100px;
+        border-radius: 50%;
+        animation: shake 1.5s infinite;
+    }
+    @keyframes shake
+    {
+        0% { transform: translate(1px, -1px) rotate(0deg);}
+        10% { transform: translate(1px, -3px) rotate(-1deg);}
+        20% { transform: translate(1px, -5px) rotate(-3deg);}
+        30% { transform: translate(1px, -7px) rotate(0deg);}
+        40% { transform: translate(1px, -9px) rotate(1deg);}
+        50% { transform: translate(1px, -11px) rotate(3deg);}
+        60% { transform: translate(1px, -9px) rotate(0deg);}
+        70% { transform: translate(1px, -7px) rotate(-1deg);}
+        80% { transform: translate(1px, -5px) rotate(-3deg);}
+        90% { transform: translate(1px, -3px) rotate(0deg);}
+        100% { transform: translate(1px, -1px) rotate(-1deg);}
+    }
+</style>
+<div class="preloader"> <img class="preloader-icon" src="{{asset('gp.gif')}}" alt="My Site Preloader"> </div>
+
+ @include('sweetalert::alert')
 
 <!-- ======= Hero Section ======= -->
 <section id="hero">
@@ -53,11 +91,17 @@
                         <div class="carousel-content">
                             <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Sollyinstantawoof</span></h2>
                             <p class="animate__animated animate__fadeInUp">We are here to serve you better .</p>
-                            <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+                            @if(Auth()->user())
+                                <a href="{{route('dashboard')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Dashboard</a>
+                                <a href="{{route('logout')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Logout</a>
+                            @else
+                            <a href="{{route('register')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+                            <a href="{{route('login')}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Login</a>
+                            @endif
                         </div>
                     </div>
                 </div>
-
+            </div>
 
             </div>
         </div>
@@ -575,6 +619,35 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('lan/assets/js/main.js')}}"></script>
+
+
+<style>
+    .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+    }
+
+    .my-float{
+        margin-top:16px;
+    }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="http:wa.me/2348034547657/?text=Goodday, My Username is....." class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+<script>
+    window.onload = function(){ document.querySelector(".preloader").style.display = "none"; }
+</script>
 
 </body>
 
