@@ -107,7 +107,7 @@ class AirtimeController
                     $ph = $request->number;
 
                     $receiver = $user->email;
-                    $admin = 'info@yellowmantelecoms.com.ng';
+                    $admin = 'info@sollyinstantawoof.com.ng';
 
                     Mail::to($receiver)->send(new Emailtrans($bo));
                     Mail::to($admin)->send(new Emailtrans($bo));
