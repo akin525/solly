@@ -9,9 +9,9 @@
     <title>{{Auth::user()->name}} Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="sollyinstantawoof" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="https://sollyinstantawoof.com.ng/fd.jpg">
 
     <!-- jsvectormap css -->
     <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
