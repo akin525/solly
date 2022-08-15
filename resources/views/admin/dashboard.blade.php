@@ -19,36 +19,40 @@
             </div>
         </div>
         <!-- end page title -->
+
+
 <div class="midde_cont">
     <div class="container-fluid">
-        <div class="row column_title">
-            <div class="col-md-12">
-                <div class="page_title">
-                    <h2>Dashboard</h2>
+        <!--end row-->
+        <div class="alert alert-primary alert-dismissible alert-additional fade show" role="alert">
+            <div class="alert-body">
+                {{--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+                <div class="d-flex">
+                    <div class="flex-shrink-0 me-3">
+                        <i class="ri-bell-fill fs-16 align-middle"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading">Renomobilemoney Notification!  !</h5>
+                        <p class="mb-0">Alway read & check notice after logged in</p>
+                    </div>
                 </div>
             </div>
+            <div class="alert-content">
+                <p class="mb-0">{{$pa['message']}}.</p>
+            </div>
         </div>
-        <div class='alert alert-info'>
-            <button type='button' class='close' data-dismiss='alert'>&times;</button>
-            <i class='fa fa-ban-circle'></i><strong>Notification: </br></strong>Welcome Back {{Auth::user()->name}}
-        </div>
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Renomobilemoney Notification!</h4>
-            <p><b>{{$pa['message']}}</b></p>
-            <hr>
-            <p class="mb-0">Alway read & check notice after logged in</p>
-        </div>
+
         <div class="card">
             <div class="card-body">
                 <div class="w3-panel w3-yellow w3-round-xlarge">
                     <div class="card-body">
                         <center>
                             <!--                    <h4 class="w3-text-green"><b>&nbsp;&nbsp; &nbsp;&nbsp; <a class="w3-btn w3-green w3-border w3-round-large" href="with.php">Withdraw From MCD Wallet</a>-->
-                            <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/credit')}}">Credit User</a>
-                            <a class="w3-btn w3-green w3-border w3-round-large" href="#">Withdraw Reno Wallet</a>
+                            <a class="badge badge-gradient-primary" href="{{route('admin/credit')}}">Credit User</a>
+                            <a class="badge badge-gradient-primary" href="#">Withdraw Reno Wallet</a>
 
-                            <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/credit')}}">Refund User</a>
-                            <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/charge')}}">Charge User</a>
+                            <a class="badge badge-gradient-primary" href="{{route('admin/credit')}}">Refund User</a>
+                            <a class="badge badge-gradient-primary" href="{{route('admin/charge')}}">Charge User</a>
 {{--                            <a class="w3-btn w3-green w3-border w3-round-large" href="#">Withdraw MCD Commission</a>--}}
 
                             <!--                            <a class="w3-btn w3-green w3-border w3-round-large" href="method.php">All Payment Method</a>-->
@@ -57,164 +61,292 @@
                     </b></h4>  	</div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card crm-widget">
+                    <div class="card-body p-0">
+                        <div class="row row-cols-md-3 row-cols-1">
+                            <div class="col col-lg border-end">
+                                <div class="py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">Number Of Today Bill <i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-account-box-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">{{$data['bill']}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">Number Of Today Deposit <i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i></h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-account-box-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">{{$data['deposit']}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        Today Total New User<i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-account-box-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">{{$data['user']}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-lg-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        Today Visitors<i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-account-box-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">{{$data['nou']}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg">
+                                <div class="mt-3 mt-lg-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        Total Today Deposit<i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-wallet-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">₦{{number_format(intval($data['sum_deposits'] *1),2)}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card crm-widget">
+                    <div class="card-body p-0">
+                        <div class="row row-cols-md-3 row-cols-1">
+                            <div class="col col-lg border-end">
+                                <div class="py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">Total Today Purchase<i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-wallet-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">₦{{number_format(intval($data['sum_bill'] *1), 2)}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">Total Users Wallet<i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i></h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-wallet-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">₦{{number_format(intval($totalwallet *1), 2)}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-md-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        All Deposit<i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-wallet-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">₦{{number_format(intval($totaldeposite *1), 2)}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg border-end">
+                                <div class="mt-3 mt-lg-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        Total Bills<i class="ri-arrow-up-circle-line text-success fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-wallet-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">₦{{number_format(intval($bill *1), 2)}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col col-lg">
+                                <div class="mt-3 mt-lg-0 py-4 px-3">
+                                    <h5 class="text-muted text-uppercase fs-13">
+                                        Total Users<i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i>
+                                    </h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <i class="ri-account-box-fill display-6 text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h2 class="mb-0">{{$alluser}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <!-- card -->
+                <div class="card card-animate">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <p class="text-uppercase fw-medium text-muted mb-0">Airtime Discount</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h5 class="text-success fs-14 mb-0">
+                                    <i class="ri-arrow-right-up-line fs-13 align-middle"></i>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4">₦{{number_format(intval($lock *1), 2)}}</h4>
+                                <a href="#" class="text-decoration-underline">View All</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-success rounded fs-3">
+                                                <i class="bx bx-wallet text-success"></i>
+                                            </span>
+                            </div>
+                        </div>
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+                <!-- card -->
+                <div class="card card-animate bg-info">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <p class="text-uppercase fw-medium text-white-50 mb-0">Renomobilemoney Balance</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h5 class="text-warning fs-14 mb-0">
+                                    <i class="ri-arrow-right-down-line fs-13 align-middle"></i>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4 text-white">₦{{number_format(intval($tran *1), 2)}}</h4>
+                                <a href="#" class="text-decoration-underline text-white-50">View all</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-light rounded fs-3">
+                                                <i class="bx bx-wallet text-white"></i>
+                                            </span>
+                            </div>
+                        </div>
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+                <!-- card -->
+                <div class="card card-animate">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <p class="text-uppercase fw-medium text-muted mb-0">Total Profit<</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h5 class="text-success fs-14 mb-0">
+                                    <i class="ri-arrow-right-up-line fs-13 align-middle"></i>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4">₦{{number_format(intval($totalprofit *1), 2)}}</h4>
+                                <a href="#" class="text-decoration-underline">See details</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-warning rounded fs-3">
+                                                <i class="bx bx-wallet text-warning"></i>
+                                            </span>
+                            </div>
+                        </div>
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+
+            <div class="col-xl-3 col-md-6">
+                <!-- card -->
+                <div class="card card-animate">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <p class="text-uppercase fw-medium text-muted mb-0">Total Charges</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h5 class="text-muted fs-14 mb-0">
+                                    +0.00 %
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4">₦{{number_format(intval($totalcharge *1), 2)}}</h4>
+                                <a href="#" class="text-decoration-underline">All Charges</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-primary rounded fs-3">
+                                                <i class="bx bx-wallet text-primary"></i>
+                                            </span>
+                            </div>
+                        </div>
+                    </div><!-- end card body -->
+                </div><!-- end card -->
+            </div><!-- end col -->
+        </div> <!-- end row-->
+
         <br>
-        <div class="row">
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-cyan text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-counter"></i></h1>
-
-                        <h6 class="text-white">{{$data['bill']}}</h6>
-                        <h6 class="text-white">Number Of Today Bill</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-success text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-counter"></i></h1>
-                        <h6 class="text-white">{{$data['deposit']}}</h6>
-                        <h6 class="text-white">Number Of Today Deposit</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-warning text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-counter"></i></h1>
-                        <h6 class="text-white">{{$data['user']}}</h6>
-                        <h6 class="text-white">Today Total New User</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-danger text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-counter"></i></h1>
-                        <h6 class="text-white">{{$data['nou']}}</h6>
-                        <h6 class="text-white">Today Visitors</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-secondary text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-
-                        <h6 class="text-white">₦{{number_format(intval($data['sum_deposits'] *1),2)}}</h6>
-                        <h6 class="text-white">Total Today Deposit</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-success text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($data['sum_bill'] *1), 2)}}</h6>
-                        <h6 class="text-white">Total Today Purchase</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-secondary text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($totalwallet *1), 2)}}</h6>
-                        <h6 class="text-white">Total Users Wallet</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-danger text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($totaldeposite *1), 2)}}</h6>
-                        <h6 class="text-white">All Deposit</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-cyan text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-
-                        <h6 class="text-white">₦{{number_format(intval($bill *1), 2)}}</h6>
-                        <h6 class="text-white">Total Bills</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-success text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-account"></i></h1>
-                        <h6 class="text-white">{{$alluser}}</h6>
-                        <h6 class="text-white">Total Users</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-warning text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($tran *1), 2)}}</h6>
-                        <h6 class="text-white">Renomobilemoney Balance</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card card-hover">
-                    <div class="box bg-danger text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($lock *1), 2)}}</h6>
-                        <h6 class="text-white">Airtime Discount</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Column -->
-            <div class="col-md-3 col-lg-6">
-                <div class="card card-hover">
-                    <div class="box bg-cyan text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-
-                        <h6 class="text-white">₦{{number_format(intval($totalprofit *1), 2)}}</h6>
-                        <h6 class="text-white">Total Profit</h6>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-            <div class="col-md-3 col-lg-6">
-                <div class="card card-hover">
-                    <div class="box bg-danger text-center">
-                        <h1 class="font-light text-white"><i class="mdi mdi-wallet"></i></h1>
-                        <h6 class="text-white">₦{{number_format(intval($totalcharge *1), 2)}}</h6>
-                        <h6 class="text-white">Total Charges</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- /.row -->
         <br>
         <div class="card">
             <div class="card-header">
