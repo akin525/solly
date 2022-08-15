@@ -7,10 +7,10 @@
         <meta name="description" content=" We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more">
 
         <title>Sollyinstantawoof|</title>
-        <link rel="shortcut icon" href="https://sollyinstantawoof.com.ng/images/fd.jpg" />
+        <link rel="shortcut icon" href="https://sollyinstantawoof.com.ng/fd.jpg" />
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://sollyinstantawoof.com.ng/images/fd.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://sollyinstantawoof.com.ng/fd.jpg">
         <!-- Custom CSS -->
         <link rel="shortcut icon" href="{{asset('"assets/images/favicon.ico')}}">
 
