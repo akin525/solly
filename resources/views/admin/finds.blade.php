@@ -1,4 +1,24 @@
 @include('admin.layouts.sidebar')
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Admin/Find User</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="{{route('admin/dashboard')}}">Dashboards</a></li>
+                            <li class="breadcrumb-item active">Admin/Find User</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
 <div class="midde_cont">
     <div class="container-fluid">
         <div class="row column_title">
@@ -105,7 +125,7 @@
                                             @if($user->photo)
                                                 <img src="https://mcd.5starcompany.com.ng/app/avatar/{{$user->photo}}" alt="" class="rounded-circle thumb-sm mr-1"> {{$user->username}}
                                             @else
-                                                <img width="50" src="{{asset('samso.png')}}" alt="" class="rounded-circle thumb-sm mr-1"> {{$user->username}}
+                                                <img width="50" src="{{asset('fd.jpg)}}" alt="" class="rounded-circle thumb-sm mr-1"> {{$user->username}}
                                             @endif
                                         </td>
                                         <td>{{$user->email }}</td>

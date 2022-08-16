@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <!--end row-->
         <div class="alert alert-primary alert-dismissible alert-additional fade show" role="alert">
-            <div class="alert-body">
+            <div c9lass="alert-body">
                 {{--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
                 <div class="d-flex">
                     <div class="flex-shrink-0 me-3">

@@ -170,6 +170,84 @@
                             </div><!-- end card -->
                         </div><!-- end col -->
                     </div> <!-- end row-->
+
+
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <!-- card -->
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> Waec Result Checker</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <h5 class="text-success fs-14 mb-0">
+                                                <i class="ri-arrow-right-up-line fs-13 align-middle"></i>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <a href="#">
+                                    <img width="300" src="{{asset('img/wa.jpg')}}" alt="">
+                                        </a>
+                                    </div>
+
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+
+                        <div class="col-xl-4 col-md-6">
+                            <!-- card -->
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Neco Result Checker</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <h5 class="text-danger fs-14 mb-0">
+                                                <i class="ri-arrow-right-down-line fs-13 align-middle"></i>
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <a href="#">
+                                        <img width="300" height="200" src="{{asset('img/neco.jpg')}}" alt="">
+                                        </a>
+                                    </div>
+
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+
+
+                        <div class="col-xl-4 col-md-6">
+                            <!-- card -->
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Nabteb Result Checker</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                            <h5 class="text-muted fs-14 mb-0">
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <a href="#">
+                                        <img width="300" src="{{asset('img/nabteb.jpg')}}" alt="">
+                                        </a>
+                                    </div>
+
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+                    </div> <!-- end row-->
+
                     <div class="card">
                         <div class="card-body">
                             <div class='alert alert-primary'>

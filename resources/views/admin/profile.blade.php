@@ -1,5 +1,25 @@
 @include('admin.layouts.sidebar')
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Admin/Profile</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="{{route('admin/dashboard')}}">Dashboards</a></li>
+                            <li class="breadcrumb-item active">Admin/Profile</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
 <div class="row">
 
     @if (session('success'))
@@ -20,14 +40,14 @@
         <div class="card">
             <div class="card-body met-pro-bg">
                 <div class="met-profile" >
-                    <div class="row" style='background-image: url("/images/pattern.png"); padding: 20px; color: white'>
+                    <div class="row" style='background-image: url("/img/pattern.png"); padding: 20px; color: white'>
                         <div class="col-lg-4 align-self-center mb-3 mb-lg-0">
                             <div class="met-profile-main">
                                 <div class="met-profile-main-pic">
                                     @if($user->photo!=null)
                                         <img src="https://mcd.5starcompany.com.ng/app/avatar/{{$user->username }}.JPG" alt="img" class="img img-thumbnail">
                                     @else
-                                        <img alt="image" class="img img-thumbnail" width="300" src="{{asset('samso.png')}}">
+                                        <img alt="image" class="img img-thumbnail" width="300" src="{{asset('fd.jpg')}}">
                                     @endif
                                     <span class="fro-profile_main-pic-change"><i class="fa fa-camera"></i></span></div>
                                 <div class="met-profile_user-detail">
@@ -91,10 +111,10 @@
         <div class="card-body">
             <center>
                 <!--                    <h4 class="w3-text-green"><b>&nbsp;&nbsp; &nbsp;&nbsp; <a class="w3-btn w3-green w3-border w3-round-large" href="with.php">Withdraw From MCD Wallet</a>-->
-                <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/credit')}}">Credit User</a>
+                <a class="badge badge-gradient-primary" href="{{route('admin/credit')}}">Credit User</a>
 
-                <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/credit')}}">Refund User</a>
-                <a class="w3-btn w3-green w3-border w3-round-large" href="{{route('admin/charge')}}">Charge User</a>
+                <a class="badge badge-gradient-primary" href="{{route('admin/credit')}}">Refund User</a>
+                <a class="badge badge-gradient-primary" href="{{route('admin/charge')}}">Charge User</a>
 
                 <!--                            <a class="w3-btn w3-green w3-border w3-round-large" href="method.php">All Payment Method</a>-->
             </center>
@@ -116,7 +136,7 @@
                                 {{--                                            <h4 class="title-text mb-0">Monthly Revenue</h4>--}}
                                 {{--                                        </div>--}}
                                 {{--                                    </div>--}}
-                                <div class="d-flex justify-content-between bg-purple p-3 mt-3 rounded">
+                                <div class="d-flex justify-content-between badge-gradient-primary p-3 mt-3 rounded">
                                     <center>
                                     <div>
                                         <h4 class="font-weight-semibold text-white">&#8358;{{number_format($user->wallet)}}</h4>
@@ -129,7 +149,7 @@
                                     </div>
                                 </div>
 
-                                <div class="d-flex justify-content-between bg-purple p-3 mt-3 rounded">
+                                <div class="d-flex justify-content-between badge-gradient-primary p-3 mt-3 rounded">
                                     <div>
                                         <h4 class="mb-1 font-weight-semibold text-white">&#8358;{{number_format($sumbo)}}</h4>
                                         <p class=" mb-0 text-white">Total Bills</p>
