@@ -229,7 +229,7 @@ public function neco(Request $request)
         curl_close($curl);
 //                echo $response;
         $data = json_decode($response, true);
-        $success = $data['ok']["success"];
+        $success = $data['ok']['success'];
 
         if ($success==1) {
             $ref=$data['ok']['ref'];
