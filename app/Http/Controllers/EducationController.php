@@ -104,7 +104,7 @@ $request->validate([
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->refid),
+            CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->id),
             CURLOPT_HTTPHEADER => array(
                 'apikey: RENO-62e25c49815d84.57487685'
             ),
@@ -113,7 +113,7 @@ $request->validate([
         $response = curl_exec($curl);
 
         curl_close($curl);
-//                echo $response;
+//                return $response;
         $data = json_decode($response, true);
         $success = $data["success"];
 
