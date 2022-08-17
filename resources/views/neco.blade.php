@@ -27,7 +27,7 @@
                         <div class="page-header">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="page-title text-white">Neco Result Checker</h3>
+                                    <h3 class="page-title">Neco Result Checker</h3>
                                     <ul class="breadcrumb">
                                     </ul>
                                 </div>
