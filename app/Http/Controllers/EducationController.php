@@ -106,7 +106,7 @@ $request->validate([
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->id),
             CURLOPT_HTTPHEADER => array(
-                'apikey: RENO-62e25c49815d84.57487685'
+                'apikey: RENO-62e2e0e9105fe6.46494398'
             ),
         ));
 
@@ -220,7 +220,7 @@ public function neco(Request $request)
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->id),
             CURLOPT_HTTPHEADER => array(
-                'apikey: RENO-62e25c49815d84.57487685'
+                'apikey: RENO-62e2e0e9105fe6.46494398'
             ),
         ));
 
