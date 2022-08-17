@@ -218,7 +218,7 @@ public function neco(Request $request)
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->refid),
+            CURLOPT_POSTFIELDS => array('value' => $request->value,'amount' => $request->amount,'refid' => $request->id),
             CURLOPT_HTTPHEADER => array(
                 'apikey: RENO-62e25c49815d84.57487685'
             ),
@@ -227,10 +227,10 @@ public function neco(Request $request)
         $response = curl_exec($curl);
 
         curl_close($curl);
-                return $response;
+//                return $response;
         $data = json_decode($response, true);
         $success = $data['ok']['success'];
-return $success;
+//return $success;
         if ($success==1) {
             $ref=$data['ok']['ref'];
             $token=$data['ok']['token'];
