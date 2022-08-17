@@ -58,8 +58,8 @@ Route::middleware(['auth'])->group(function () {
     Route::view('picktv', 'picktv');
     Route::post('nec', [EducationController::class, 'neco'])->name('nec');
     Route::post('wac', [EducationController::class, 'waec'])->name('wac');
-    Route::post('waec', [EducationController::class, 'indexw'])->name('waec');
-    Route::post('neco', [EducationController::class, 'indexn'])->name('neco');
+    Route::get('waec', [EducationController::class, 'indexw'])->name('waec');
+    Route::get('neco', [EducationController::class, 'indexn'])->name('neco');
     Route::post('passw', [AuthController::class, 'pass'])->name('passw');
     Route::post('pick', [AlltvController::class, 'tv'])->name('pick');
     Route::get('select', [AuthController::class, 'select'])->name('select');
