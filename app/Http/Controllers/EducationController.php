@@ -229,11 +229,11 @@ public function neco(Request $request)
         curl_close($curl);
 //                echo $response;
         $data = json_decode($response, true);
-        $success = $data["success"];
+        $success = $data['ok']["success"];
 
         if ($success==1) {
-            $ref=$data['ref'];
-            $token=$data['token'];
+            $ref=$data['ok']['ref'];
+            $token=$data['ok']['token'];
             $token1=json_decode($token, true);
 //return $token1;
             foreach ($token1 as $to){
