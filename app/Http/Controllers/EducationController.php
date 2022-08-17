@@ -113,13 +113,14 @@ $request->validate([
         $response = curl_exec($curl);
 
         curl_close($curl);
-//                return $response;
         $data = json_decode($response, true);
-        $success = $data["success"];
+//        return $data;
 
+        $success = $data['ok']["success"];
+//return $success;
         if ($success==1) {
-            $ref=$data['ref'];
-            $token=$data['token'];
+            $ref=$data['ok']['ref'];
+            $token=$data['ok']['token'];
             $token1=json_decode($token, true);
 //return $token1;
             foreach ($token1 as $to){

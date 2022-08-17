@@ -111,7 +111,7 @@
                                             @foreach($ne as $re)
                                                 <tr>
                                                     <td>{{$re->created_at}}</td>
-                                                    <td>{{\App\Console\encription::decryptdata($re->username)}}</td>
+                                                    <td>{{$re->username}}</td>
                                                     <td>{{$re->seria}}</td>
                                                     <td>{{$re->pin}}</td>
                                                     <td>{{$re->ref}}</td>
