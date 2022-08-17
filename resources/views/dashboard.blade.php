@@ -188,7 +188,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-end justify-content-between mt-4">
-                                        <a href="#">
+                                        <a href="{{route('waec')}}">
                                     <img width="300" src="{{asset('img/wa.jpg')}}" alt="">
                                         </a>
                                     </div>
@@ -213,7 +213,7 @@
                                     </div>
 
                                     <div class="d-flex align-items-end justify-content-between mt-4">
-                                        <a href="#">
+                                        <a href="{{route('neco')}}">
                                         <img width="300" height="200" src="{{asset('img/neco.jpg')}}" alt="">
                                         </a>
                                     </div>

@@ -303,6 +303,16 @@
                         </a>
                     </li> <!-- end Dashboard Menu -->
                     <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('waec')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-book-2-fill"></i> <span data-key="t-dashboards">Waec Checker</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{route('neco')}}"   aria-controls="sidebarDashboards">
+                            <i class="ri-book-2-fill"></i> <span data-key="t-dashboards">Neco Checker</span>
+                        </a>
+                    </li> <!-- end Dashboard Menu -->
+                    <li class="nav-item">
                         <a class="nav-link menu-link" href="{{route('fund')}}"   aria-controls="sidebarDashboards">
                             <i class="ri-wallet-2-fill"></i> <span data-key="t-dashboards">All Deposit</span>
                         </a>
