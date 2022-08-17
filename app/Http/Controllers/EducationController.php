@@ -88,7 +88,7 @@ $request->validate([
             'amount' => $request->amount,
             'server_res' => 'ur fault',
             'result' => 1,
-            'phone' => $request->number,
+            'phone' => 'no',
             'refid' => $request->id,
             'discountamoun'=>0,
         ]);
@@ -200,7 +200,7 @@ public function neco(Request $request)
             'amount' => $request->amount,
             'server_res' => 'ur fault',
             'result' => 1,
-            'phone' => $request->number,
+            'phone' => 'no',
             'refid' => $request->id,
             'discountamoun'=>0,
         ]);
