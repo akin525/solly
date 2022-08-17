@@ -227,7 +227,7 @@ public function neco(Request $request)
         $response = curl_exec($curl);
 
         curl_close($curl);
-                echo $response;
+                return $response;
         $data = json_decode($response, true);
         $success = $data['ok']['success'];
 return $success;
