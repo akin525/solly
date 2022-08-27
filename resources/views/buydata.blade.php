@@ -72,11 +72,11 @@
 
         <h6>
             <ul>
-                <li> MTN [SME] *461*4# or *556#</li>
-                <li>MTN [CG] *131*4# or *460*260#</li>
-                <li>9mobile [Gifting] *228#</li>
-                <li>Airtel *140#</li>
-                <li>Glo *127*0#</li>
+                <li class="list-group-item list-group-item-primary"> MTN [SME] *461*4# or *556#</li>
+                <li class="list-group-item list-group-item-success">MTN [CG] *131*4# or *460*260#</li>
+                <li class="list-group-item list-group-item-action">9mobile [Gifting] *228#</li>
+                <li class="list-group-item list-group-item-primary">Airtel *140#</li>
+                <li class="list-group-item list-group-item-primary">Glo *127*0#</li>
             </ul>
         </h6>
 

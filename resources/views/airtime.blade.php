@@ -74,21 +74,27 @@
             </div>
             <div class="col-sm-4 ">
                 <br>
+                <center> <h6>Codes for Airtime Balance: </h6></center>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-primary">MTN Airtime VTU    <span id="RightT"> *556#  </span></li>
 
-                <p>You can use the codes below to check your Airtime Balance!  </p>
-
-                <h6>
-                    <ul>
-                        <li> MTN *556#</li>
-                        <li>MTN [CG] *131*4# or *460*260#</li>
-                        <li>9mobile  *223#</li>
-                        <li>Airtel *123#</li>
-                        <li>Glo *124*0#</li>
-                    </ul>
-                </h6>
+                    <li class="list-group-item list-group-item-success"> 9mobile Airtime VTU   *232# </li>
+                    <li class="list-group-item list-group-item-action"> Airtel Airtime VTU   *123# </li>
+                    <li class="list-group-item list-group-item-info"> Glo Airtime VTU #124#. </li>
+                </ul>
                 <br>
 
-
+                <style>
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                </style>
+                <div class="card-body">
+                    <div class="center">
+                        <img    src="{{asset('df.jpeg')}}" alt="#" />
+                    </div>
+                </div>
                 <br>
 
 
