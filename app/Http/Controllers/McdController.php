@@ -62,7 +62,7 @@ class McdController
 
                     if ($fg->plan == "airtime") {
 
-                        $resellerURL = 'https://app.mcd.5starcompany.com.ng/api/reseller/';
+                        $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
                         $curl = curl_init();
 
                         curl_setopt_array($curl, array(
@@ -78,7 +78,7 @@ class McdController
                             CURLOPT_CUSTOMREQUEST => 'POST',
                             CURLOPT_POSTFIELDS => array('service' => 'data', 'coded' => 'MTN1GB', 'phone' => '081602452854'),
                             CURLOPT_HTTPHEADER => array(
-                                'Authorization: mcd_key_tGSkWHl5fJZsJev5FRyB5hT1HutlCa'
+                                'Authorization: mcd_key_75rq4][oyfu545eyuriup1q2yue4poxe3jfd'
                             )));
 
                         $response = curl_exec($curl);
@@ -89,5 +89,5 @@ class McdController
                 }
             }
         }
-
+    }
 }

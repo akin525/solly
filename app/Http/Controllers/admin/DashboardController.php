@@ -57,7 +57,7 @@ public function dashboard(Request $request)
             $lock += (int)$bill1->discountamoun;
 
         }
-        $resellerURL = 'https://app.mcd.5starcompany.com.ng/api/reseller/';
+        $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
 
         $curl = curl_init();
 
@@ -105,7 +105,7 @@ public function mcdtran()
 {
     if (Auth()->user()->role == "admin") {
 
-        $resellerURL = 'https://app.mcd.5starcompany.com.ng/api/reseller/';
+        $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
 
 
         $curl = curl_init();

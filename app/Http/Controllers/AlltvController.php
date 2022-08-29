@@ -33,7 +33,7 @@ class AlltvController
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array('service' => 'tv'),
             CURLOPT_HTTPHEADER => array(
-                'Authorization: mcd_key_tGSkWHl5fJZsJev5FRyB5hT1HutlCa'
+                'Authorization: mcd_key_75rq4][oyfu545eyuriup1q2yue4poxe3jfd'
             ),
         ));
 

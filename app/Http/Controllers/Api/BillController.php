@@ -75,7 +75,7 @@ class BillController
                     $daterserver = new DataserverController();
                     if ($fg->plan == "airtime") {
 
-                        $resellerURL = 'https://app.mcd.5starcompany.com.ng/api/reseller/';
+                        $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
                         $curl = curl_init();
 
                         curl_setopt_array($curl, array(
@@ -92,7 +92,7 @@ class BillController
                             CURLOPT_POSTFIELDS => array('service' => 'airtime', 'coded' => $fg->cat_id, 'phone' => $request->number, 'amount' => $request->amount, 'reseller_price' => $request->amount),
 
                             CURLOPT_HTTPHEADER => array(
-                                'Authorization: mcd_key_tGSkWHl5fJZsJev5FRyB5hT1HutlCa'
+                                'Authorization: mcd_key_75rq4][oyfu545eyuriup1q2yue4poxe3jfd'
                             )));
 
                         $response = curl_exec($curl);

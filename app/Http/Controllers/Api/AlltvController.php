@@ -164,7 +164,7 @@ class AlltvController
                     $wallet->balance = $gt;
                     $wallet->save();
 
-                    $resellerURL = 'https://app.mcd.5starcompany.com.ng/api/reseller/';
+                    $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
 
                     $curl = curl_init();
 
@@ -179,7 +179,7 @@ class AlltvController
                         CURLOPT_CUSTOMREQUEST => 'POST',
                         CURLOPT_POSTFIELDS => array('service' => 'tv', 'coded' => $tv->cat_id, 'phone' => $request->number),
                         CURLOPT_HTTPHEADER => array(
-                            'Authorization: mcd_key_tGSkWHl5fJZsJev5FRyB5hT1HutlCa'
+                            'Authorization: '
                         )
                     ));
 
