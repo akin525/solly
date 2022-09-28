@@ -209,7 +209,7 @@
                                                 <td align='left' style='padding:0;Margin:0;width:560px'>
                                                     <table cellpadding='0' cellspacing='0' width='100%' role='presentation' style='mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px'>
                                                         <tr>
-                                                            <td align='center' style='padding:0;Margin:0;padding-top:10px;padding-bottom:10px'><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#405189;font-size:14px'>Got a question?&nbsp;Email us at info@yellowmantelecoms.com.ng <a target='_blank' href='' style='-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#100b0d;font-size:14px'></a>.</p></td>
+                                                            <td align='center' style='padding:0;Margin:0;padding-top:10px;padding-bottom:10px'><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:21px;color:#405189;font-size:14px'>Got a question?&nbsp;Email us at info@sollyinstantawoof.com.ng <a target='_blank' href='' style='-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#100b0d;font-size:14px'></a>.</p></td>
                                                         </tr>
                                                     </table></td>
                                             </tr>
@@ -240,7 +240,7 @@
                                                                 </table></td>
                                                         </tr>
                                                         <tr>
-                                                            <td align='center' style='padding:0;Margin:0;padding-bottom:35px'><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#405189;font-size:12px'>© 2022 Yellowmantelecoms, Inc. All Rights Reserved.</p><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#405189;font-size:12px'><br></p></td>
+                                                            <td align='center' style='padding:0;Margin:0;padding-bottom:35px'><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#405189;font-size:12px'>© 2022 Sollyinstantawoof, Inc. All Rights Reserved.</p><p style='Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#405189;font-size:12px'><br></p></td>
                                                         </tr>
                                                         <tr>
                                                             <td style='padding:0;Margin:0'>
