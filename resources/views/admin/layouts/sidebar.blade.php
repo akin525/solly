@@ -11,7 +11,7 @@
     <meta content="We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment and more" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="https://sollyinstantawoof.com.ng/fd.jpg">
+    <link rel="shortcut icon" href="https://realinstant.com.ng/fd.jpg">
 
     <!-- jsvectormap css -->
     <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
